@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Signup Page</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="form-container" id="login-form">
+      <h2>Login</h2>
+      <form>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <p class="switch-form">Don't have an account? <a href="#" id="switch-to-signup">Signup</a></p>
+        <div class="social-login">
+          <button class="social-btn facebook">Login with Facebook</button>
+          <button class="social-btn google">Login with Google</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="form-container" id="signup-form">
+      <h2>Signup</h2>
+      <form>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Create Password</label>
+          <input type="password" id="password" placeholder="Create your password" required>
+        </div>
+        <div class="input-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+        </div>
+        <button type="submit" class="btn">Signup</button>
+        <p class="switch-form">Already have an account? <a href="#" id="switch-to-login">Login</a></p>
+        <div class="social-login">
+          <button class="social-btn facebook">Signup with Facebook</button>
+          <button class="social-btn google">Signup with Google</button>
+        </div>
+      </form>
+    </div> 
+  </div>
+
+   <script>
+    const loginForm = document.getElementById('login-form');
+    const signupForm = document.getElementById('signup-form');
+    const switchToSignup = document.getElementById('switch-to-signup');
+    const switchToLogin = document.getElementById('switch-to-login');
+
+    switchToSignup.addEventListener('click', () => {
+      loginForm.style.display = 'none';
+      signupForm.style.display = 'block';
+    });
+
+    switchToLogin.addEventListener('click', () => {
+      signupForm.style.display = 'none';
+      loginForm.style.display = 'block';
+    });
+  </script> 
+</body>
+</html>
+
